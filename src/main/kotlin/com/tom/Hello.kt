@@ -14,3 +14,7 @@ class Human{
         println("Hello Kotlin!!")
     }
 }
+
+class Girl{
+
+}
