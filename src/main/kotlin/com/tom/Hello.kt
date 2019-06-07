@@ -4,12 +4,12 @@ fun main(args: Array<String>) {
 
 
     var s:String? = "abcde"
-    s=null
-    println(s!!.length)
+//    s=null
+    println(s?.length)
     println(s?.get(2))
     println(s?.substring(2,4))
 
-    val h = Human(66.5f,1.7f)
+    val h = Human("Hank",66.5f,1.7f)
     println(h.bmi())
 
     val score = 88
@@ -26,7 +26,7 @@ fun main(args: Array<String>) {
 
 }
 
-class Human(var weight:Float , var height:Float){
+class Human(var name:String , var weight:Float , var height:Float){
     init {
         println("test$weight")
     }
