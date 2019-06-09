@@ -1,4 +1,4 @@
-package com.tom.guess
+package com.tom
 
 import java.util.*
 

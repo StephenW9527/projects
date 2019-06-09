@@ -4,8 +4,14 @@ import java.util.*
 
 fun main(args: Array<String>) {
 //    userInput()
-    val stu = Student("Tom", 58, 99)
+
+    Student.pass = 50
+    val stu = Student("Tommy", 55, 48)
+    val stu1 = Student("Hank", 30, 20)
+    val stu2 = Student("Jane", 100, 99)
     stu.print()
+    stu1.print()
+    stu2.print()
     println("Highest socre:${stu.highest()} " )
     val test = 123
     println("Test is :$test")
@@ -14,9 +20,25 @@ fun main(args: Array<String>) {
 }
 
 class  Student(var name:String? , var english:Int , var math:Int) {
-    fun print(){
-        println(name + "\t" + english + "\t" + math + "\t" + "AVG:"+(math+english)/2)
+    companion object {
+        @JvmStatic
+        var pass = 50
+        fun test(){
+            println("testing")
+        }
     }
+
+
+
+
+    fun print(){
+        println(name + "\t" + english + "\t" + math + "\t" + getAverage()+"\t"+
+                grading() + "\t"+if(getAverage()>=pass)"PASSED" else "FAILED")
+    }
+
+    fun getAverage()= (math+english)/2
+
+
     fun nameCheck(){
         println(name?.length)
     }
@@ -30,6 +52,13 @@ class  Student(var name:String? , var english:Int , var math:Int) {
        }
         return max
     }
+    fun grading() = when (getAverage()) {
+            in 90..100 -> 'A'
+            in 80..89 ->'B'
+            in 70..79 ->'C'
+            in 60..69 ->'D'
+            else ->'F'
+        }
 
 
 }

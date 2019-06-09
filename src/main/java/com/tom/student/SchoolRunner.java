@@ -4,8 +4,17 @@ import java.util.Scanner;
 
 public class SchoolRunner {
     public static void main(String[] args) {
-        Student stu = new Student("hank",77,99);
+
+
+        Student.pass=50;
+        Student stu = new Student("hank",55,19);
+        Student stu1 = new Student("Eric",30,40);
+        Student stu2 = new Student("Jane",60,40);
+
         stu.print();
+        stu1.print();
+        stu2.print();
+
         System.out.println(" Heigest score : "+stu.highest());
 //        userInput();
     }

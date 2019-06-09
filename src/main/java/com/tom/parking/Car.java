@@ -21,6 +21,9 @@ public class Car {
     public void leave(){
         leave = LocalDateTime.now();
     }
+
+
+
     public void setLeave(LocalDateTime leave){
         if(leave.isAfter(enter)){
             this.leave = leave;
