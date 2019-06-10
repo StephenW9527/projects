@@ -7,15 +7,18 @@ public class SchoolRunner {
 
 
         Student.pass=50;
-        Student stu = new Student("hank",55,19);
+        Student stu = new Student("Hank",55,19);
         Student stu1 = new Student("Eric",30,40);
         Student stu2 = new Student("Jane",60,40);
+        GradeatedStudent gStu = new GradeatedStudent("Jack",65, 65 ,60);
+
 
         stu.print();
         stu1.print();
         stu2.print();
+        gStu.print();
 
-        System.out.println(" Heigest score : "+stu.highest());
+//        System.out.println(" Heigest score : "+stu.highest());
 //        userInput();
     }
 

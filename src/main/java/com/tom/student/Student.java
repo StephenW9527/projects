@@ -25,7 +25,7 @@ public class Student {
 
 
     public void print(){
-
+        int average = getAverage();
         System.out.print(name + "\t" + english + "\t" + math+"\t"+
                 getAverage() +"\t"+ ((getAverage()>=pass) ? "PASS" : "FAILED" ));
         char grading = 'F';
@@ -38,13 +38,13 @@ public class Student {
                 grading ='B';
                 break;
             case 7:
-                grading = 'C';
+                grading ='C';
                 break;
             case 6:
-                grading = 'D';
+                grading ='D';
                 break;
             default:
-                grading = 'F';
+                grading ='F';
 
                 System.out.println("\t" + grading);
         }
