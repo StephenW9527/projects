@@ -12,14 +12,35 @@ fun main(args: Array<String>) {
     stu.print()
     stu1.print()
     stu2.print()
+
+    val gstu = GraduatedStudent("Jack",60, 60,60)
+    gstu.print()
     println("Highest socre:${stu.highest()} " )
     val test = 123
     println("Test is :$test")
 
 
 }
+class  GraduatedStudent(name: String? , english: Int,math: Int,var thesis:Int) : Student(name,english,math){
+    companion object {
+        val pass = 70 //子類別身上自己的屬性
+    }
 
-class  Student(var name:String? , var english:Int , var math:Int) {
+    override fun print() {
+        println("$name\t$english\t$math\t$thesis\t${getAverage()}\t${passOrFailed()}\t${grading()}")
+    }
+
+    override fun passOrFailed() =
+        if(getAverage() > pass) "PASS" else "FAILED"
+
+}
+
+
+
+
+
+
+open class  Student(var name:String? , var english:Int , var math:Int) {
     companion object {
         @JvmStatic
         var pass = 50
@@ -31,9 +52,8 @@ class  Student(var name:String? , var english:Int , var math:Int) {
 
 
 
-    fun print(){
-        println(name + "\t" + english + "\t" + math + "\t" + getAverage()+"\t"+
-                grading() + "\t"+if(getAverage()>=pass)"PASSED" else "FAILED")
+   open fun print(){
+       println("$name\t$english\t$math\t${getAverage()}\t${passOrFailed()}\t${grading()}")
     }
 
     fun getAverage()= (math+english)/2
@@ -60,6 +80,7 @@ class  Student(var name:String? , var english:Int , var math:Int) {
             else ->'F'
         }
 
+    open fun passOrFailed()= if(getAverage() > pass) "PASS" else "FAILED"
 
 }
 
